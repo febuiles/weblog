@@ -21,42 +21,40 @@ the people behind them.
 **Student:** [Martha de Luque]()    
 **Mentors:** [Guillermo Iguaran](https://github.com/guilleiguaran) and [Joshua Peek](https://github.com/josh)
 
-Enhance the performance of the asset compilation process of Ruby on Rails. At first, some benchmarks
-of the current state of some well-known rails-based projects will be needed. Then contrast different
-alternatives to the current options, maybe integrate them too. If the results are not satisfactory,
-propose substitutes and even implementing them.
+Martha will be profiling, benchmarking and updating parts of our asset compilation process to
+improve our asset [re]generation speed. The initial scope of this project covers CoffeeScript, Sass and
+Uglifier, but benchmarks will be guiding this effort to work where we can get the biggest benefits.
 
 ## Evented File System Monitoring
 
 **Student:** [Puneet Agarwal](https://github.com/puneet24)    
 **Mentors:** [Xavier Noria](https://github.com/puneet24) and [Matthew Draper](https://github.com/matthewd)
 
-Ruby On Rails consists of a very powerful API called the File Checker API which serves the epic
-feature of dynamic reloading. This project deals with improving the current implementation as a
-substitute. The final output of the project will be an alternative to the existing File Checker that
-is, the Evented File System Monitoring gem which will be best optimized for the Rails framework.
+Our File Checker API is due for a makeover. It has served us well over the years, we're done with
+polling. Puneet will be replacing our current design with a event-based approach that relies
+on existing third-party monitors (e.g. `inotify` or `FSEvent`).
 
 ## Asset Pipeline Support for Source Maps
 
 **Student:** [Andrei Istratii](https://github.com/Andreis13)    
 **Mentors:** [Arthur Nogueira Neves](https://github.com/arthurnn) and [Rafael Mendonça França](https://github.com/rafaelfranca)
 
-The project is supposed to add support for Javascript and CSS source-maps generation functionality
-to the Rails Asset Pipeline. This has a potential of making it easier to debug and inspect client
-code in production environments as well as situations when the assets are minified or are compiled
-from another language like Coffeescript.
+The goal of Andrei's project is to give you good inspecting and debugging capabilities in environments
+where your code goes through various transformations (e.g. your CoffeeScript file being compiled to
+Javascript and then minified in your staging environment). With source maps you can use the existing
+tools your browser provides to do things like reading the CoffeeScript source or setting breakpoints
+on it.
 
 ## Refactoring ActiveSupport and ActionView
 
 **Student:** [Islam Wazery](https://github.com/wazery)    
 **Mentors:** [Kir Shatrov](https://github.com/kirs) and [Carlos Antonio da Silva](https://github.com/carlosantoniodasilva)
 
-This project is a refactoring project for Rails, it consists of some refactoring work like
-refactoring ActiveSupport::Parameters to not depend on Ruby's standard Hash also
-ActionView::OutputBuffer needs to not depend on Ruby's standard String (through
-ActiveSupport::SafeBuffer. ActionView helpers can provide a new API using the new Ruby 2 first class
-support for keyword arguments, building on the ground work of Kirill on merged PR#18323. Also
-ActionView needs to be decoupled from ActionPack.
+Islam is adding some of the stuff we love to see in Rails, liked named arguments
+ for ActionView helpers (goodbye counting commas!) or removing the ActiveSupport dependency on
+ ActionPack. He will also be investigating how to improve some of our core abstractions like
+ [ActionController::Parameters](http://edgeapi.rubyonrails.org/classes/ActionController/Parameters.html)
+ and [ActionView::OutputBuffer](http://tenderlovemaking.com/2014/06/04/yagni-methods-slow-us-down.html).
 
 ## Web Console Browser Extensions
 
